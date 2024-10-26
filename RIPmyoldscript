@@ -1,0 +1,424 @@
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Parent = game.Players.LocalPlayer.PlayerGui
+ScreenGui.ResetOnSpawn = false
+
+local Frame = Instance.new("Frame")
+Frame.Visible = false
+Frame.Size = UDim2.new(0.50, 0.00, 0.86, 0.00)
+Frame.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
+Frame.Position = UDim2.new(0.25, 0.00, 0.07, 0.00)
+Frame.BorderSizePixel = 0
+Frame.BackgroundColor3 = Color3.new(0.60, 0.60, 0.60)
+Frame.Parent = ScreenGui
+
+
+
+
+
+local Reset = Instance.new("TextButton")
+Reset.Name = "Reset"
+Reset.TextWrapped = true
+Reset.BorderSizePixel = 0
+Reset.TextScaled = true
+Reset.BackgroundColor3 = Color3.new(0.78, 0.78, 0.78)
+Reset.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+Reset.TextSize = 14
+Reset.Size = UDim2.new(0.33, 0.00, 0.09, 0.00)
+Reset.TextColor3 = Color3.new(0.00, 0.00, 0.00)
+Reset.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
+Reset.Text = "Reset"
+Reset.Position = UDim2.new(0.54, 0.00, 0.28, 0.00)
+Reset.Parent = Frame
+Reset.MouseButton1Click:Connect(function()
+	game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end)
+
+
+
+
+TUI = false
+local ToggleUI = Instance.new("TextButton")
+ToggleUI.Name = "ToggleUI"
+ToggleUI.TextWrapped = true
+ToggleUI.BorderSizePixel = 0
+ToggleUI.TextScaled = true
+ToggleUI.BackgroundColor3 = Color3.new(0.78, 0.78, 0.78)
+ToggleUI.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+ToggleUI.TextSize = 14
+ToggleUI.Size = UDim2.new(0.14, 0.00, 0.10, 0.00)
+ToggleUI.TextColor3 = Color3.new(0.00, 0.00, 0.00)
+ToggleUI.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
+ToggleUI.Text = "ToggleUI"
+ToggleUI.Position = UDim2.new(0.03, 0.00, 0.06, 0.00)
+ToggleUI.Parent = ScreenGui
+ToggleUI.MouseButton1Click:Connect(function()
+	if TUI == false then
+		TUI = true
+		Frame.Visible = true
+	else
+		TUI = false
+		Frame.Visible = false
+	end
+end)
+
+
+
+
+
+local SpeedBoost = Instance.new("TextButton")
+SpeedBoost.Name = "SpeedBoost"
+SpeedBoost.TextWrapped = true
+SpeedBoost.BorderSizePixel = 0
+SpeedBoost.TextScaled = true
+SpeedBoost.BackgroundColor3 = Color3.new(0.78, 0.78, 0.78)
+SpeedBoost.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+SpeedBoost.TextSize = 14
+SpeedBoost.Size = UDim2.new(0.33, 0.00, 0.09, 0.00)
+SpeedBoost.TextColor3 = Color3.new(0.00, 0.00, 0.00)
+SpeedBoost.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
+SpeedBoost.Text = "Speed Boost"
+SpeedBoost.Position = UDim2.new(0.55, 0.00, 0.06, 0.00)
+SpeedBoost.Parent = Frame
+
+local TextBox = Instance.new("TextBox")
+TextBox.TextWrapped = true
+TextBox.BorderSizePixel = 0
+TextBox.TextScaled = true
+TextBox.BackgroundColor3 = Color3.new(1.00, 1.00, 1.00)
+TextBox.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+TextBox.TextSize = 14
+TextBox.Size = UDim2.new(1.00, 0.00, 0.89, 0.00)
+TextBox.TextColor3 = Color3.new(0.00, 0.00, 0.00)
+TextBox.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
+TextBox.Text = ""
+TextBox.Position = UDim2.new(-0.01, 0.00, 1.17, 0.00)
+TextBox.Parent = SpeedBoost
+TextBox.PlaceholderText = "Enter your desired walk speed here"
+SpeedBoost.MouseButton1Click:Connect(function()
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = TextBox.Text
+end)
+
+
+
+
+local JumpBoost = Instance.new("TextButton")
+JumpBoost.Name = "JumpBoost"
+JumpBoost.TextWrapped = true
+JumpBoost.BorderSizePixel = 0
+JumpBoost.TextScaled = true
+JumpBoost.BackgroundColor3 = Color3.new(0.78, 0.78, 0.78)
+JumpBoost.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+JumpBoost.TextSize = 14
+JumpBoost.Size = UDim2.new(0.33, 0.00, 0.09, 0.00)
+JumpBoost.TextColor3 = Color3.new(0.00, 0.00, 0.00)
+JumpBoost.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
+JumpBoost.Text = "JumpBoost"
+JumpBoost.Position = UDim2.new(0.12, 0.00, 0.06, 0.00)
+JumpBoost.Parent = Frame
+
+local TextBox_1 = Instance.new("TextBox")
+TextBox_1.TextWrapped = true
+TextBox_1.BorderSizePixel = 0
+TextBox_1.TextScaled = true
+TextBox_1.BackgroundColor3 = Color3.new(1.00, 1.00, 1.00)
+TextBox_1.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+TextBox_1.TextSize = 14
+TextBox_1.Size = UDim2.new(1.00, 0.00, 0.89, 0.00)
+TextBox_1.TextColor3 = Color3.new(0.00, 0.00, 0.00)
+TextBox_1.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
+TextBox_1.Text = ""
+TextBox_1.Position = UDim2.new(-0.00, 0.00, 1.17, 0.00)
+TextBox_1.Parent = JumpBoost
+TextBox_1.PlaceholderText = "Enter your desired jump height here"
+JumpBoost.MouseButton1Click:Connect(function()
+	game.Players.LocalPlayer.Character.Humanoid.JumpHeight = TextBox_1.Text
+end)
+
+
+
+
+
+
+local Sit = Instance.new("TextButton")
+Sit.Name = "Sit"
+Sit.TextWrapped = true
+Sit.BorderSizePixel = 0
+Sit.TextScaled = true
+Sit.BackgroundColor3 = Color3.new(0.78, 0.78, 0.78)
+Sit.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+Sit.TextSize = 14
+Sit.Size = UDim2.new(0.33, 0.00, 0.09, 0.00)
+Sit.TextColor3 = Color3.new(0.00, 0.00, 0.00)
+Sit.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
+Sit.Text = "Sit"
+Sit.Position = UDim2.new(0.12, 0.00, 0.41, 0.00)
+Sit.Parent = Frame
+Sit.MouseButton1Click:Connect(function()
+	game.Players.LocalPlayer.Character.Humanoid.Sit = true
+end)
+
+
+
+
+
+
+local GodMode = Instance.new("TextButton")
+GodMode.Name = "GodMode"
+GodMode.TextWrapped = true
+GodMode.BorderSizePixel = 0
+GodMode.TextScaled = true
+GodMode.BackgroundColor3 = Color3.new(0.78, 0.78, 0.78)
+GodMode.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+GodMode.TextSize = 14
+GodMode.Size = UDim2.new(0.33, 0.00, 0.09, 0.00)
+GodMode.TextColor3 = Color3.new(0.00, 0.00, 0.00)
+GodMode.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
+GodMode.Text = "GodMode(only work in some games)"
+GodMode.Position = UDim2.new(0.54, 0.00, 0.41, 0.00)
+GodMode.Parent = Frame
+GodMode.MouseButton1Click:Connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/zephyr10101/ignore-touchinterests/main/main",true))()
+end)
+
+
+
+
+
+
+
+
+
+FBDB = false
+local SGA = nil
+local FullBright = Instance.new("TextButton")
+FullBright.Name = "FullBright"
+FullBright.TextWrapped = true
+FullBright.BorderSizePixel = 0
+FullBright.TextScaled = true
+FullBright.BackgroundColor3 = Color3.new(0.78, 0.78, 0.78)
+FullBright.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+FullBright.TextSize = 14
+FullBright.Size = UDim2.new(0.33, 0.00, 0.09, 0.00)
+FullBright.TextColor3 = Color3.new(0.00, 0.00, 0.00)
+FullBright.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
+FullBright.Text = "Full Bright"
+FullBright.Position = UDim2.new(0.12, 0.00, 0.28, 0.00)
+FullBright.Parent = Frame
+FullBright.MouseButton1Click:Connect(function()
+	if FBDB == false then
+		FBDB = true
+		SGA = game.Lighting.Ambient
+		game.Lighting.Ambient = Color3.new(1, 1, 1)
+	else
+		FBDB = false
+		game.Lighting.Ambient = SGA
+	end
+end)
+
+
+
+
+
+
+local Fly = Instance.new("TextButton")
+Fly.Name = "Fly"
+Fly.TextWrapped = true
+Fly.BorderSizePixel = 0
+Fly.TextScaled = true
+Fly.BackgroundColor3 = Color3.new(0.78, 0.78, 0.78)
+Fly.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+Fly.TextSize = 14
+Fly.Size = UDim2.new(0.33, 0.00, 0.09, 0.00)
+Fly.TextColor3 = Color3.new(0.00, 0.00, 0.00)
+Fly.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
+Fly.Text = "Fly"
+Fly.Position = UDim2.new(0.54, 0.00, 0.75, 0.00)
+Fly.Parent = Frame
+Fly.MouseButton1Click:Connect(function()
+	loadstring(game:HttpGet('https://pastebin.com/raw/YSL3xKYU'))()
+end)
+
+
+
+local TurnInvisible = Instance.new("TextButton")
+TurnInvisible.Name = "TurnInvisible"
+TurnInvisible.TextWrapped = true
+TurnInvisible.BorderSizePixel = 0
+TurnInvisible.TextScaled = true
+TurnInvisible.BackgroundColor3 = Color3.new(0.78, 0.78, 0.78)
+TurnInvisible.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+TurnInvisible.TextSize = 14
+TurnInvisible.Size = UDim2.new(0.33, 0.00, 0.09, 0.00)
+TurnInvisible.TextColor3 = Color3.new(0.00, 0.00, 0.00)
+TurnInvisible.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
+TurnInvisible.Text = "Turn Invisible"
+TurnInvisible.Position = UDim2.new(0.12, 0.00, 0.75, 0.00)
+TurnInvisible.Parent = Frame
+TurnInvisible.MouseButton1Click:Connect(function()
+	loadstring(game:HttpGet('https://pastebin.com/raw/3Rnd9rHf'))()
+end)
+
+
+
+
+
+local PlayMusic = Instance.new("TextButton")
+PlayMusic.Name = "PlayMusic"
+PlayMusic.TextWrapped = true
+PlayMusic.BorderSizePixel = 0
+PlayMusic.TextScaled = true
+PlayMusic.BackgroundColor3 = Color3.new(0.78, 0.78, 0.78)
+PlayMusic.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+PlayMusic.TextSize = 14
+PlayMusic.Size = UDim2.new(0.33, 0.00, 0.09, 0.00)
+PlayMusic.TextColor3 = Color3.new(0.00, 0.00, 0.00)
+PlayMusic.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
+PlayMusic.Text = "Play Music"
+PlayMusic.Position = UDim2.new(0.54, 0.00, 0.54, 0.00)
+PlayMusic.Parent = Frame
+
+
+
+local TextBox_2 = Instance.new("TextBox")
+TextBox_2.TextWrapped = true
+TextBox_2.BorderSizePixel = 0
+TextBox_2.TextScaled = true
+TextBox_2.BackgroundColor3 = Color3.new(1.00, 1.00, 1.00)
+TextBox_2.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+TextBox_2.TextSize = 14
+TextBox_2.Size = UDim2.new(1.00, 0.00, 0.89, 0.00)
+TextBox_2.TextColor3 = Color3.new(0.00, 0.00, 0.00)
+TextBox_2.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
+TextBox_2.Text = ""
+TextBox_2.Position = UDim2.new(-0.00, 0.00, 1.17, 0.00)
+TextBox_2.Parent = PlayMusic
+TextBox_2.PlaceholderText = "Enter your song id here"
+PlayMusic.MouseButton1Click:Connect(function()
+	local x = Instance.new("Sound")
+	x.Parent = workspace
+	x.SoundId = "rbxassetid://"..TextBox_2.Text
+	x:Play()
+	x.Ended:Connect(function()
+		x:Destroy()
+	end)
+end)
+
+
+
+
+
+
+
+local TeleportToPlayer = Instance.new("TextButton")
+TeleportToPlayer.Name = "TeleportToPlayer"
+TeleportToPlayer.TextWrapped = true
+TeleportToPlayer.BorderSizePixel = 0
+TeleportToPlayer.TextScaled = true
+TeleportToPlayer.BackgroundColor3 = Color3.new(0.78, 0.78, 0.78)
+TeleportToPlayer.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+TeleportToPlayer.TextSize = 14
+TeleportToPlayer.Size = UDim2.new(0.33, 0.00, 0.09, 0.00)
+TeleportToPlayer.TextColor3 = Color3.new(0.00, 0.00, 0.00)
+TeleportToPlayer.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
+TeleportToPlayer.Text = "Teleport To Player"
+TeleportToPlayer.Position = UDim2.new(0.12, 0.00, 0.54, 0.00)
+TeleportToPlayer.Parent = Frame
+
+local TextBox_1 = Instance.new("TextBox")
+TextBox_1.TextWrapped = true
+TextBox_1.BorderSizePixel = 0
+TextBox_1.TextScaled = true
+TextBox_1.BackgroundColor3 = Color3.new(1.00, 1.00, 1.00)
+TextBox_1.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+TextBox_1.TextSize = 14
+TextBox_1.Size = UDim2.new(1.00, 0.00, 0.89, 0.00)
+TextBox_1.TextColor3 = Color3.new(0.00, 0.00, 0.00)
+TextBox_1.BorderColor3 = Color3.new(0.00, 0.00, 0.00)
+TextBox_1.Text = ""
+TextBox_1.Position = UDim2.new(-0.00, 0.00, 1.17, 0.00)
+TextBox_1.Parent = TeleportToPlayer
+TextBox_1.PlaceholderText = "Enter the name of the player that you want to teleport to here"
+TeleportToPlayer.MouseButton1Click:Connect(function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players:FindFirstChild(TextBox_1.Text).Character.HumanoidRootPart.CFrame
+end)
+
+
+
+
+
+
+
+
+local UIS = game:GetService('UserInputService')
+local frame = Frame
+local dragToggle = nil
+local dragSpeed = 0.25
+local dragStart = nil
+local startPos = nil
+
+local function updateInput(input)
+	local delta = input.Position - dragStart
+	local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+		startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+	game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
+end
+
+frame.InputBegan:Connect(function(input)
+	if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
+		dragToggle = true
+		dragStart = input.Position
+		startPos = frame.Position
+		input.Changed:Connect(function()
+			if input.UserInputState == Enum.UserInputState.End then
+				dragToggle = false
+			end
+		end)
+	end
+end)
+
+UIS.InputChanged:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+		if dragToggle then
+			updateInput(input)
+		end
+	end
+end)
+
+
+
+
+
+local UIS = game:GetService('UserInputService')
+local frame = ToggleUI
+local dragToggle = nil
+local dragSpeed = 0.25
+local dragStart = nil
+local startPos = nil
+
+local function updateInput2(input)
+	local delta = input.Position - dragStart
+	local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+		startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+	game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
+end
+
+frame.InputBegan:Connect(function(input)
+	if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
+		dragToggle = true
+		dragStart = input.Position
+		startPos = frame.Position
+		input.Changed:Connect(function()
+			if input.UserInputState == Enum.UserInputState.End then
+				dragToggle = false
+			end
+		end)
+	end
+end)
+
+UIS.InputChanged:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+		if dragToggle then
+			updateInput2(input)
+		end
+	end
+end)
